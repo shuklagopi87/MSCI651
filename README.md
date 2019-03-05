@@ -15,12 +15,17 @@ To solve the above challenges, the team decided to use Google Script Editor to w
 The team created a function called setduplicates. The function does:
 1. List all the Google sheets containing the term "CH".
 1. Loop through all the sheets and through all the lines which contain a URL
-1. Build a JSON object containing as the key the URL and as content an array with all the sheets (chapters) and lines the URL appears
+1. Build a JSON object containing as the key the URL and as content an array with all the sheet names (chapters) and lines the URL appears
 1. The duplicated URLs are those which contain more than 1 element in the array of the JSON object.
 1. The duplicated URLs are then counted and printed onto the current worksheet
 
 The JSON object had the following structure:
 {
   "https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties/introduction-to-the-atom/v/atomic-number-mass-number-and-isotopes" : [{chapter=Chapter I, line=16.0}, {chapter=Chapter II, line=19.0}]
-  ...
+  , ...
   }
+
+Further to this, on each URL we execute the Google function UrlFetchApp.fetch()
+This is a predefined function which tries to open a URL and returns the content. If the URL does not exist, the function returns an error. We capture that error and list the URL as a broken link in the current worksheet.
+
+The result is an updated current worksheet with the number of duplicates, the number of broken links and the list of duplicates and list of borken links.
