@@ -42,4 +42,4 @@ The team hence write a small script which :
 1. Check if the status of the `curl` is 200, meaning the ressource could be opened correctly.
 1. If the status is not 200, the ressource is blocked in Pakistan
 
-The team executed this and did not find any ressource which is blocked.
+The team executed this and found 4 ressource which has access issues from Pakistan.
