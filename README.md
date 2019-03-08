@@ -37,7 +37,7 @@ To verify this, the team has requested an account ad WonderProxy.com.
 WonderProxy provides proxy servers worldwide. Those servers are located in the selected country and websites opened through the server will respond just like if the user was in that country.
 
 The team hence write a small script which :
-1. Loos through all the URL ressources
+1. Loop through all the URL ressources
 1. Executes `curl -x http://lahore.wonderproxy.com:12000 --proxy-user "USERNAME:PASSWORD" -L LINKTORESSOURCE`
 1. Check if the status of the `curl` is 200, meaning the ressource could be opened correctly.
 1. If the status is not 200, the ressource is blocked in Pakistan
